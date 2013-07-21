@@ -1,0 +1,62 @@
+2013-07-20T19:57:23.122946+00:00 heroku[api]: Enable Logplex by jmmontero.ortega@gmail.com
+2013-07-20T19:57:23.156796+00:00 heroku[api]: Release v2 created by jmmontero.ortega@gmail.com
+2013-07-20T20:02:50.825068+00:00 heroku[api]: Add mongolab:sandbox add-on by jmmontero.ortega@gmail.com
+2013-07-20T20:02:50.849654+00:00 heroku[api]: Release v3 created by jmmontero.ortega@gmail.com
+2013-07-21T02:06:55+00:00 heroku[slug-compiler]: Slug compilation started
+2013-07-21T02:14:41.093887+00:00 heroku[api]: Scale to web=1 by jmmontero.ortega@gmail.com
+2013-07-21T02:14:51.760215+00:00 heroku[api]: Attach HEROKU_POSTGRESQL_NAVY resource by jmmontero.ortega@gmail.com
+2013-07-21T02:14:51.783921+00:00 heroku[api]: Release v4 created by jmmontero.ortega@gmail.com
+2013-07-21T02:14:51.860197+00:00 heroku[api]: Add DATABASE_URL config by jmmontero.ortega@gmail.com
+2013-07-21T02:14:51.880936+00:00 heroku[api]: Release v5 created by jmmontero.ortega@gmail.com
+2013-07-21T02:14:51.926007+00:00 heroku[api]: Add PATH, JAVA_OPTS, SBT_OPTS, REPO config by jmmontero.ortega@gmail.com
+2013-07-21T02:14:51.959096+00:00 heroku[api]: Release v6 created by jmmontero.ortega@gmail.com
+2013-07-21T02:14:52.004746+00:00 heroku[api]: Deploy cb02274 by jmmontero.ortega@gmail.com
+2013-07-21T02:14:52.039618+00:00 heroku[api]: Release v7 created by jmmontero.ortega@gmail.com
+2013-07-21T02:14:52.079614+00:00 heroku[api]: Deploy cb02274 by jmmontero.ortega@gmail.com
+2013-07-21T02:14:52+00:00 heroku[slug-compiler]: Slug compilation finished
+2013-07-21T02:15:07.830126+00:00 heroku[web.1]: Starting process with command `target/start -Dhttp.port=39495 -Xmx384m -Xss512k -XX:+UseCompressedOops`
+2013-07-21T02:15:08.489315+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS:  -Djava.rmi.server.useCodebaseOnly=true
+2013-07-21T02:15:08.944283+00:00 app[web.1]: Play server process ID is 2
+2013-07-21T02:15:09.499501+00:00 app[web.1]: [[37minfo[0m] play - Application started (Prod)
+2013-07-21T02:15:09.619578+00:00 app[web.1]: [[37minfo[0m] play - Listening for HTTP on /0:0:0:0:0:0:0:0:39495
+2013-07-21T02:15:10.142390+00:00 heroku[web.1]: State changed from starting to up
+2013-07-21T03:19:00.379216+00:00 heroku[web.1]: Idling
+2013-07-21T03:19:03.091561+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2013-07-21T03:19:05.313229+00:00 heroku[web.1]: Process exited with status 143
+2013-07-21T03:19:05.333507+00:00 heroku[web.1]: State changed from up to down
+2013-07-21T12:32:15.233728+00:00 heroku[web.1]: Unidling
+2013-07-21T12:32:15.233728+00:00 heroku[web.1]: State changed from down to starting
+2013-07-21T12:32:27.985042+00:00 heroku[web.1]: Starting process with command `target/start -Dhttp.port=57188 -Xmx384m -Xss512k -XX:+UseCompressedOops`
+2013-07-21T12:32:28.548084+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS:  -Djava.rmi.server.useCodebaseOnly=true
+2013-07-21T12:32:28.949915+00:00 app[web.1]: Play server process ID is 2
+2013-07-21T12:32:29.582788+00:00 app[web.1]: [[37minfo[0m] play - Application started (Prod)
+2013-07-21T12:32:29.691399+00:00 app[web.1]: [[37minfo[0m] play - Listening for HTTP on /0:0:0:0:0:0:0:0:57188
+2013-07-21T12:32:29.828275+00:00 heroku[web.1]: State changed from starting to up
+2013-07-21T12:34:16.107627+00:00 heroku[router]: at=info method=GET path=/Add?name=Chema&mail=jmmontero.ortega@gmail.com host=cadizdevelopersapi.herokuapp.com fwd="84.123.183.89" dyno=web.1 connect=1ms service=8ms status=404 bytes=1949
+2013-07-21T12:34:32.033560+00:00 app[web.1]: [[31merror[0m] application - 
+2013-07-21T12:34:31.595871+00:00 app[web.1]: [[31merror[0m] play - Cannot invoke the action, eventually got an error: com.mongodb.MongoException$Network: Write operation to server /127.0.0.1:27017 failed on database CadizDevelopersAPI
+2013-07-21T12:34:32.151363+00:00 app[web.1]: 
+2013-07-21T12:34:32.262008+00:00 app[web.1]: ! @6f33hl3ci - Internal server error, for (POST) [/Add?name=Chema&mail=jmmontero.ortega@gmail.com] ->
+2013-07-21T12:34:32.404945+00:00 app[web.1]: 
+2013-07-21T12:34:31.613426+00:00 heroku[router]: at=info method=POST path=/Add?name=Chema&mail=jmmontero.ortega@gmail.com host=cadizdevelopersapi.herokuapp.com fwd="84.123.183.89" dyno=web.1 connect=1ms service=270ms status=500 bytes=1941
+2013-07-21T12:34:32.512557+00:00 app[web.1]: play.api.Application$$anon$1: Execution exception[[Network: Write operation to server /127.0.0.1:27017 failed on database CadizDevelopersAPI]]
+2013-07-21T12:34:32.623016+00:00 app[web.1]: 	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10-2.1.2.jar:2.1.2]
+2013-07-21T12:34:32.731509+00:00 app[web.1]: 	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10-2.1.2.jar:2.1.2]
+2013-07-21T12:34:32.841787+00:00 app[web.1]: 	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$handleAction$1$2$$anonfun$apply$22.apply(PlayDefaultUpstreamHandler.scala:399) [play_2.10-2.1.2.jar:2.1.2]
+2013-07-21T12:34:32.949629+00:00 app[web.1]: 	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$handleAction$1$2$$anonfun$apply$22.apply(PlayDefaultUpstreamHandler.scala:399) [play_2.10-2.1.2.jar:2.1.2]
+2013-07-21T12:34:33.066645+00:00 app[web.1]: 	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+2013-07-21T12:34:33.174572+00:00 app[web.1]: 	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$handleAction$1$2.apply(PlayDefaultUpstreamHandler.scala:399) [play_2.10-2.1.2.jar:2.1.2]
+2013-07-21T12:34:33.282541+00:00 app[web.1]: Caused by: com.mongodb.MongoException$Network: Write operation to server /127.0.0.1:27017 failed on database CadizDevelopersAPI
+2013-07-21T12:34:33.390835+00:00 app[web.1]: 	at com.mongodb.DBTCPConnector.say(DBTCPConnector.java:153) ~[mongo-java-driver-2.11.2.jar:na]
+2013-07-21T12:34:33.500305+00:00 app[web.1]: 	at com.mongodb.DBTCPConnector.say(DBTCPConnector.java:115) ~[mongo-java-driver-2.11.2.jar:na]
+2013-07-21T12:34:33.608686+00:00 app[web.1]: 	at com.mongodb.DBApiLayer$MyCollection.insert(DBApiLayer.java:248) ~[mongo-java-driver-2.11.2.jar:na]
+2013-07-21T12:34:33.716942+00:00 app[web.1]: 	at com.mongodb.DBApiLayer$MyCollection.insert(DBApiLayer.java:204) ~[mongo-java-driver-2.11.2.jar:na]
+2013-07-21T12:34:33.827134+00:00 app[web.1]: 	at com.mongodb.DBCollection.insert(DBCollection.java:76) ~[mongo-java-driver-2.11.2.jar:na]
+2013-07-21T12:34:33.936133+00:00 app[web.1]: 	at com.mongodb.casbah.MongoCollectionBase$class.insert(MongoCollection.scala:508) ~[casbah-core_2.10-2.6.2.jar:2.6.2]
+2013-07-21T12:34:34.048377+00:00 app[web.1]: Caused by: java.net.ConnectException: Connection refused
+2013-07-21T12:34:34.156652+00:00 app[web.1]: 	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.6.0_27]
+2013-07-21T12:34:34.267841+00:00 app[web.1]: 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:327) ~[na:1.6.0_27]
+2013-07-21T12:34:34.378437+00:00 app[web.1]: 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:193) ~[na:1.6.0_27]
+2013-07-21T12:34:34.490005+00:00 app[web.1]: 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:180) ~[na:1.6.0_27]
+2013-07-21T12:34:34.599665+00:00 app[web.1]: 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:384) ~[na:1.6.0_27]
+2013-07-21T12:34:34.709619+00:00 app[web.1]: 	at java.net.Socket.connect(Socket.java:546) ~[na:1.6.0_27]

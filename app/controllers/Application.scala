@@ -15,12 +15,16 @@ import java.io.{FileInputStream, ByteArrayOutputStream, InputStream}
 object Application extends Controller {
 
 
+  val DBLocation = "mongodb://RestUser:RestUser@ds035368.mongolab.com:35368/heroku_app17033224"
+  val Database = "heroku_app17033224"
+
   def GetUsers() = Action {
 
-    val client = MongoClient()
+    val client = MongoClient(MongoClientURI(DBLocation))
+
     var jsonList = List[JsValue]()
 
-    for(user <- client("CadizDevelopersAPI")("Users").find())
+    for(user <- client(Database)("Users").find())
     {
        val obj = MongoDBObject.newBuilder
 
@@ -36,9 +40,9 @@ object Application extends Controller {
 
   def GetUser(id : String) = Action {
 
-    val client = MongoClient()
+    val client = MongoClient(MongoClientURI(DBLocation))
 
-    val user = client("CadizDevelopersAPI")("Users").findOneByID(id).get
+    val user = client(Database)("Users").findOneByID(id).get
 
     val obj = MongoDBObject.newBuilder
 
@@ -52,7 +56,7 @@ object Application extends Controller {
 
   def GetImage(id : String) = Action {
 
-    val mongo = MongoConnection()("CadizDevelopersAPI")
+    val mongo = MongoConnection(DBLocation)(Database)
     val gridFS = GridFS(mongo)
 
     val array = fileToBytes(gridFS.find(new ObjectId(id)).inputStream)
@@ -63,9 +67,9 @@ object Application extends Controller {
 
   def Add(name : String , mail : String) = Action {
 
-    val client = MongoClient()
+    val client = MongoClient(MongoClientURI(DBLocation))
 
-    val users = client("CadizDevelopersAPI")("Users")
+    val users = client(Database)("Users")
 
     val user = MongoDBObject.newBuilder
 
@@ -74,7 +78,14 @@ object Application extends Controller {
 
     val result = users.insert(user.result()).getError()
 
-    Ok(result).as("application/json")
+    if(result == null)
+    {
+      Ok("")
+    }
+    else
+    {
+      BadRequest("")
+    }
   }
 
   def AddImage(id : String) = Action(parse.anyContent) {
@@ -86,12 +97,12 @@ object Application extends Controller {
 
           try
           {
-            val mongo = MongoConnection()("CadizDevelopersAPI")
+            val mongo = MongoConnection(MongoURI(DBLocation))(Database)
 
             val gridFs = GridFS(mongo)
 
             val client = MongoClient()
-            val user = client("CadizDevelopersAPI")("Users").findOneByID(id).get
+            val user = client(Database)("Users").findOneByID(id).get
 
             if(user != null)
             {
