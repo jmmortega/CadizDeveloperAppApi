@@ -1,0 +1,20 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+
+# Get all users
+GET     /users                          controllers.Application.GetUsers()
+
+# Get a user
+GET     /users/:id                      controllers.Application.GetUser(id : String)
+
+# Get a image for user
+GET     /image/:id                      controllers.Application.GetImage(id : String)
+
+# Add user
+POST    /Add                            controllers.Application.Add(name : String , mail : String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
